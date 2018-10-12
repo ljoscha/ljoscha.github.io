@@ -131,12 +131,12 @@ body {
 /* Intro */
 
 .intro {
-  background-image: url(../img/intro-cake.png);
+  background-image: url(../img/intro-cake-1.png);
   background-repeat: no-repeat;
   background-size: contain;
   /* background-position-x: 550px; */
   /* background-position: right; */
-  background-position: 150%;
+  background-position: 100%;
   /* padding-left: 5%; */
   padding-top: 160px;
   padding-bottom: 295px;
