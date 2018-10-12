@@ -369,17 +369,16 @@ body {
   position: relative;
   width: 25px;
   height: 25px;
-  padding: 0;
+  padding: 10px;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-color: none;
   color: red;
   border: none;
   border-left: 2px solid #f18194;
   border-top: 2px solid #f18194;
   cursor: pointer;
   outline: none;
-}
+  }
 
 .btn-priew {
   transform: rotate(-45deg);
@@ -798,4 +797,46 @@ section.features {
 .contacts-info .btn-inst:hover{
   background-image: url(../img/btn-inst-white.svg);
   background-color:#f50049;
+}
+
+/* footer */
+
+.main-footer{
+  background-color: #e8e8e8;
+}
+
+.main-footer .main-navigation {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.footer-social .social-btn{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+.footer-social .btn-vk{
+  background-image: url(../img/btn-vk.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-social .btn-inst{
+  background-image: url(../img/btn-inst.svg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-social .btn-vk:hover{
+  background-image: url(../img/btn-vk-white.svg);
+}
+
+.footer-social .btn-inst:hover{
+  background-image: url(../img/btn-inst-white.svg);
 }
