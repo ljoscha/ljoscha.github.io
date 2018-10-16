@@ -21,7 +21,7 @@
           <a class="main-logo">Königsberg <br> Cake</a>
           <ul class="site-navigation">
             <li><a href="#products">Наши торты</a></li>
-            <li><a href="#">Индивидуальный заказ</a></li>
+            <li><a href="#individuals">Индивидуальный заказ</a></li>
             <li><a href="#reviews">Отзывы</a></li>
             <li><a href="#features">О нас</a></li>
             <li><a href="#order">Как заказать</a></li>
@@ -95,9 +95,33 @@
     </div>
 
     <div class="wrapper">
-      <section class="individuals">
+      <section class="individuals" id="individuals">
         <h2 class="individuals-title">Индивидуальный заказ</h2>
         <p class="individuals-question">Соберите торт в 3 шага</p>
+
+        <div class="individual-panel">
+          <div class="panel-title">
+            <p>01</p>
+            <p>Выберите <br> начинку</p>
+          </div>
+          <div class="filling-container">
+            <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
+            <div class="filling-content" id="filling-slider">
+              <div class="filling-img">
+                <img width="344" height="" src="./img/filling-1.png" alt="Maria">
+              </div>
+              <div class="filling-info">
+                <h3 class="filling-title">Шоколадный ганш</h3>
+                <p class="filling-description">Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный
+                  из всех возможных десертов!</p>
+                <p class="filling-price">1000 руб/кг</p>
+                <button class="filling-button main-btn">Выбрать</button>
+                <p id="filling-quantity" class="filling-quantity">1/12</p>
+              </div>
+            </div>
+            <button id="filling-next-btn" type="button" aria-label="Следующая начинка" class="btn-next"></button>
+          </div>
+        </div>
 
         <div class="individual-panel">
           <div class="panel-title">
@@ -123,7 +147,7 @@
 
             <div class="cake">
               <div class="size size-big">
-                <div class="size size-big-second">
+                <div class="size size-big">
                   <p>5 кг</p>
                 </div>
               </div>
@@ -133,8 +157,8 @@
 
             <div class="cake">
               <div class="size size-extra-big">
-                <div class="size size-extra-big-second">
-                  <div class="size size-extra-big-third">
+                <div class="size size-extra-big">
+                  <div class="size size-extra-big">
                     <p>8 кг</p>
                   </div>
                 </div>
@@ -142,6 +166,49 @@
               <p>Три яруса 30, 25 и 18 см</p>
               <p>(25 - 30 персон)</p>
             </div>
+          </div>
+        </div>
+
+        <div class="individual-panel">
+          <div class="panel-title">
+            <p>03</p>
+            <p>Оформление</p>
+          </div>
+
+          <div class="appearance-container">
+            <button id="appearance-priew-btn" type="button" aria-label="Предыдущее оформление" class="btn-priew"></button>
+            <div class="appearance-content" id="appearance-slider">
+              <div class="appearance-card">
+                <img src="./img/appearance-1.jpg" alt="Ягодное ассорти">
+                <p class="appearance-name">Ягодное ассорти</p>
+                <p class="appearance-price">700 руб/кг</p>
+              </div>
+              <div class="appearance-card">
+                <img src="./img/appearance-2.jpg" alt="Маршмэллоу">
+                <p class="appearance-name">Маршмэллоу</p>
+                <p class="appearance-price">600 руб/кг</p>
+              </div>
+            </div>
+            <p id="appearance-quantity" class="appearance-quantity">1/12</p>
+            <button id="appearance-next-btn" type="button" aria-label="Следующее оформление" class="btn-next"></button>
+          </div>
+          <div>
+            <h3 class="form-title">Ваш выбор</h3>
+            <form class="individual-form" action="https://echo.htmlacademy.ru" method="GET">
+              <fieldset>
+                <legend>Начинка</legend>
+                <input type="text" placeholder="Начинка" name="filling" readonly>
+              </fieldset>
+              <fieldset>
+                <legend>Размер</legend>
+                <input id="input-size" type="text" placeholder="Размер" name="size" readonly>
+              </fieldset>
+              <fieldset>
+                <legend>Оформление</legend>
+                <input type="text" placeholder="Оформление" name="appearance" readonly> 
+              </fieldset>
+              <button class="main-btn individual-form-btn">Заказать торт</button>
+            </form>
           </div>
         </div>
       </section>
@@ -226,7 +293,7 @@
               <input type="text" name="name" placeholder="Введите имя">
               <input type="email" placeholder="E-mail адрес">
               <textarea name="question" id="" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
-              <button>Отправить</button>
+              <button class="main-btn">Отправить</button>
             </form>
           </div>
           <div class="contacts-info">
@@ -247,7 +314,7 @@
           <a class="main-logo">Königsberg <br> Cake</a>
           <ul class="site-navigation">
             <li><a href="#products">Наши торты</a></li>
-            <li><a href="#">Индивидуальный заказ</a></li>
+            <li><a href="#individuals">Индивидуальный заказ</a></li>
             <li><a href="#reviews">Отзывы</a></li>
             <li><a href="#features">О нас</a></li>
             <li><a href="#order">Как заказать</a></li>

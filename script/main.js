@@ -76,3 +76,33 @@ priewBtn.addEventListener('click', function () {
   }
   slider(counter);
 });
+
+
+// chose cake size
+
+var cakes = document.getElementsByClassName("cake");
+
+for (let i = 0; i < cakes.length; i++) {
+  cakes[i].addEventListener("click", cooseCake)
+}
+
+function cooseCake(event){
+  unCooseCake();
+  let cake = event.target.closest("div.cake > .size");
+  if(cake){
+    cake.style.backgroundColor = "#f50049";
+    // cake.style.borderColor = "white";
+    let p = cake.querySelector("p");
+    let inputSize = document.getElementById("input-size");
+    inputSize.value = p.innerHTML;
+    // alert(p.innerHTML);
+    //  ЗАПИСАТЬ "P" В ФОРМУ
+  }
+}
+
+function unCooseCake(){
+  let coosenCake = document.querySelectorAll("div.cake > .size");
+    for (let i = 0; i < coosenCake.length; i++) {
+      coosenCake[i].style.backgroundColor = "";  
+  }
+}
