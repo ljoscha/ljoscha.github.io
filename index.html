@@ -108,14 +108,13 @@
             <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
             <div class="filling-content" id="filling-slider">
               <div class="filling-img">
-                <img width="344" height="" src="./img/filling-1.png" alt="Maria">
+                <img id="filling-img" width="344" height="" src="./img/filling-1.png" alt="Шоколадный ганш">
               </div>
               <div class="filling-info">
-                <h3 class="filling-title">Шоколадный ганш</h3>
-                <p class="filling-description">Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный
-                  из всех возможных десертов!</p>
-                <p class="filling-price">1000 руб/кг</p>
-                <button class="filling-button main-btn">Выбрать</button>
+                <h3 id="filling-title" class="filling-title">Шоколадный ганш</h3>
+                <p id="filling-description" class="filling-description">Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!</p>
+                <p id="filling-price" class="filling-price">1000 руб/кг</p>
+                <button id="filling-btn" class="filling-button main-btn">Выбрать</button>
                 <p id="filling-quantity" class="filling-quantity">1/12</p>
               </div>
             </div>
@@ -175,18 +174,18 @@
             <p>Оформление</p>
           </div>
 
-          <div class="appearance-container">
+          <div id="appearance-container" class="appearance-container">
             <button id="appearance-priew-btn" type="button" aria-label="Предыдущее оформление" class="btn-priew"></button>
             <div class="appearance-content" id="appearance-slider">
               <div class="appearance-card">
-                <img src="./img/appearance-1.jpg" alt="Ягодное ассорти">
-                <p class="appearance-name">Ягодное ассорти</p>
-                <p class="appearance-price">700 руб/кг</p>
+                <img id="appearance-img-1" src="./img/appearance-1.jpg" alt="Ягодное ассорти">
+                <p id="appearance-name-1" class="appearance-name">Ягодное ассорти</p>
+                <p id="appearance-price-1" class="appearance-price">700 руб/кг</p>
               </div>
               <div class="appearance-card">
-                <img src="./img/appearance-2.jpg" alt="Маршмэллоу">
-                <p class="appearance-name">Маршмэллоу</p>
-                <p class="appearance-price">600 руб/кг</p>
+                <img id="appearance-img-2" src="./img/appearance-2.jpg" alt="Маршмэллоу">
+                <p id="appearance-name-2" class="appearance-name">Маршмэллоу</p>
+                <p id="appearance-price-2" class="appearance-price">600 руб/кг</p>
               </div>
             </div>
             <p id="appearance-quantity" class="appearance-quantity">1/12</p>
@@ -197,7 +196,7 @@
             <form class="individual-form" action="https://echo.htmlacademy.ru" method="GET">
               <fieldset>
                 <legend>Начинка</legend>
-                <input type="text" placeholder="Начинка" name="filling" readonly>
+                <input id="input-filling" type="text" placeholder="Начинка" name="filling" readonly>
               </fieldset>
               <fieldset>
                 <legend>Размер</legend>
@@ -205,7 +204,7 @@
               </fieldset>
               <fieldset>
                 <legend>Оформление</legend>
-                <input type="text" placeholder="Оформление" name="appearance" readonly> 
+                <input id="input-appearance" type="text" placeholder="Оформление" name="appearance" readonly> 
               </fieldset>
               <button class="main-btn individual-form-btn">Заказать торт</button>
             </form>
@@ -292,7 +291,7 @@
             <form action="" method="POST">
               <input type="text" name="name" placeholder="Введите имя">
               <input type="email" placeholder="E-mail адрес">
-              <textarea name="question" id="" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
+              <textarea name="question" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
               <button class="main-btn">Отправить</button>
             </form>
           </div>

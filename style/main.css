@@ -48,6 +48,7 @@ body {
   color: #2e2829;
 }
 
+
 .container {
   /* min-width: 768px; */
   max-width: 100%;
@@ -69,13 +70,23 @@ body {
   border-radius: 25px;
   padding: 15px 25px;
   color: white;
+  outline:none;
 }
 
-.main-btn:hover {
+.main-btn:focus, {
   color: #f50049;
   background-color: white;
 }
 
+.main-btn:hover{
+color: #f50049;
+background-color: white;
+}
+
+.main-btn:active {
+  background-color: #f50049;
+  color: white;
+}
 /* Navigation */
 
 .main-navigation {
@@ -548,20 +559,6 @@ body {
   border: 1px solid #f50049;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .cakes {
   display: flex;
   align-items: flex-end;
@@ -736,20 +733,16 @@ body {
 @keyframes appear {
   0% {
     opacity: 0;
-
   }
-
   100% {
     opacity: 1;
-
   }
-
-  ;
 }
 
 .animation {
   -webkit-animation: appear .51s ease-in-out;
   animation: appear .51s ease-in-out;
+  transition: all;
 }
 
 /* Features */

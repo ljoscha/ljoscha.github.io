@@ -2,26 +2,81 @@ var review = {
   1: {
     "src": "./img/rew-anna.jpg",
     "name": "Аня",
-    "age": "Шлюха, 33 года",
-    "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ad dolore repellat iure molestias veritatis velit non obcaecati officiis dolorum"
+    "age": "Раб, 33 года",
+    "comment": "Огромное спасибо за мой юбилейный сюрприз! Восторг, восхищение, и масса положительных эмоций!"
   },
   2: {
     "src": "./img/rew-anton.jpg",
     "name": "Антон",
-    "age": "Отсасывает на заправках, 34 года",
-    "comment": "the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release o"
+    "age": "Раб, 34 года",
+    "comment": "Благодарю Вас, за прекрасно сделанную работу и вкуснейший торт, Надежду за учтённые пожелания, а ещё хочется отметить ее работу, насколько без суеты (в зале было многолюдно), спокойно, грамотно она ее выполняет, приятно были удивлены!"
   },
   3: {
     "src": "./img/rew-maria.jpg",
     "name": "Марина",
-    "age": "Транс, 19 лет",
-    "comment": " as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in th"
+    "age": "Раб, 19 лет",
+    "comment": "Большое спасибо за Наполеон!!! Нежный и ооооочень вкусный ))) Действительно домашний. Даже сфотографировать не успела, в офисе разошелся за несколько минут )))"
   },
   4: {
     "src": "./img/rew-tim.jpg",
     "name": "Толик",
-    "age": "Пиздализ, 20 лет",
-    "comment": "ble. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on"
+    "age": "Раб, 20 лет",
+    "comment": "Заказывала веганский пирог на день рождения внучки, когда привезли потеряла дар речи.Это произведение искусств!А еще он оказался очень вкусным! Спасибо Вам большое за такую красоту и вкуснятину!"
+  }
+}
+
+var filling = {
+  1: {
+    "src": "./img/filling-1.jpg",
+    "title": "Брюнетка",
+    "description": "Для самых ярких! Шоколадный бисквит с пропиткой, яркий вкус шоколадного крема (ганаша), нежная карамелизированная груша.",
+    "price": "1000 руб/кг"
+  },
+  2: {
+    "src": "./img/filling-2.jpg",
+    "title": "Экстра шоколад",
+    "description": "Шоколадный бисквит, мусс на натуральных сливках с темным бельгийским шоколадом и чернослив. Очень шоколадно и очень вкусно! Подходит для многоярусных тортов.",
+    "price": "2000 руб/кг"
+  },
+  3: {
+    "src": "./img/filling-3.jpg",
+    "title": "Аристократ",
+    "description": "Пропитанный ванильный бисквит, традиционное сочетание карамелезированного яблока с корицей и сметанное мусс-суфле.",
+    "price": "3000 руб/кг"
+  },
+  4: {
+    "src": "./img/filling-4.jpg",
+    "title": "Новая классика",
+    "description": "Шоколадный бисквит на сметане, легкий сметанный мусс с натуральной ягодной кислинкой (смородина, черника или другие ягоды)",
+    "price": "4000 руб/кг"
+  }
+}
+
+var appearance = {
+  1: {
+    "src": "./img/appearance-1.jpg",
+    "name": "Ягодное ассорти",
+    "price": "111 руб/кг"
+  },
+  2: {
+    "src": "./img/appearance-2.jpg",
+    "name": "Маршмэллоу",
+    "price": "222 руб/кг"
+  },
+  3: {
+    "src": "./img/appearance-1.jpg",
+    "name": "Что-то еще",
+    "price": "333 руб/кг"
+  },
+  4: {
+    "src": "./img/appearance-2.jpg",
+    "name": "Другое",
+    "price": "444 руб/кг"
+  },
+  5: {
+    "src": "./img/appearance-1.jpg",
+    "name": "иное",
+    "price": "555 руб/кг"
   }
 }
 
@@ -90,19 +145,148 @@ function cooseCake(event){
   unCooseCake();
   let cake = event.target.closest("div.cake > .size");
   if(cake){
-    cake.style.backgroundColor = "#f50049";
-    // cake.style.borderColor = "white";
+    cake.style.backgroundColor = "#fac7c3";
     let p = cake.querySelector("p");
     let inputSize = document.getElementById("input-size");
     inputSize.value = p.innerHTML;
-    // alert(p.innerHTML);
-    //  ЗАПИСАТЬ "P" В ФОРМУ
   }
 }
 
 function unCooseCake(){
-  let coosenCake = document.querySelectorAll("div.cake > .size");
-    for (let i = 0; i < coosenCake.length; i++) {
-      coosenCake[i].style.backgroundColor = "";  
+  let cakes = document.querySelectorAll("div.cake > .size");
+    for (let i = 0; i < cakes.length; i++) {
+      cakes[i].style.backgroundColor = "";  
   }
+}
+
+let fillingCounter = 1;
+
+let fillingContent = document.getElementById("filling-slider");
+
+let fillingImg = document.getElementById("filling-img");
+let fillingTitle = document.getElementById("filling-title");
+let fillingDescription = document.getElementById("filling-description");
+let fillingPrice = document.getElementById("filling-price");
+let fillingQuantity = document.getElementById("filling-quantity");
+
+let fillingBtn = document.getElementById("filling-btn");
+let fillingPrievBtn = document.getElementById("filling-priew-btn");
+let fillingNextBtn = document.getElementById("filling-next-btn");
+
+fillingBtn.addEventListener("click", function(){
+  let inputFilling = document.getElementById("input-filling");
+  inputFilling.value = fillingTitle.innerHTML;
+})
+
+let totalFillingOption = Object.keys(filling).length;
+
+document.addEventListener("DOMContentLoaded", fillFillingSlider);
+
+function fillFillingSlider() {
+  fillingImg.src = filling[fillingCounter].src;
+  fillingTitle.innerHTML = filling[fillingCounter].title;
+  fillingDescription.innerHTML = filling[fillingCounter].description;
+  fillingPrice.innerHTML = filling[fillingCounter].price;  
+  fillingQuantity.innerHTML = fillingCounter + "\/" + totalFillingOption;
+}
+
+function fillingSlider(fillingCounter) {
+  fillFillingSlider(fillingCounter);
+  fillingContent.classList.toggle("animation");
+  setTimeout(function () {
+    fillingContent.classList.remove('animation');
+  }, 250);
+}
+
+fillingNextBtn.addEventListener('click', function () {
+  fillingCounter++;
+
+  if (fillingCounter > Object.keys(filling).length) {
+    fillingCounter = 1;
+  }
+  fillingSlider(fillingCounter)
+});
+
+fillingPrievBtn.addEventListener('click', function () {
+  fillingCounter--;
+
+  if (fillingCounter <= 0) {
+    fillingCounter = Object.keys(filling).length;
+  }
+  fillingSlider(fillingCounter);
+});
+
+let appearanceCounterOne = 1;
+let appearanceCounterTwo = 2;
+
+let appearanceImgOne = document.getElementById("appearance-img-1");
+let appearanceNameOne = document.getElementById("appearance-name-1");
+let appearancePriceOne = document.getElementById("appearance-price-1");
+
+let appearanceImgTwo = document.getElementById("appearance-img-2");
+let appearanceNameTwo = document.getElementById("appearance-name-2");
+let appearancePriceTwo = document.getElementById("appearance-price-2");
+
+let appearanceQuantity = document.getElementById("appearance-quantity");
+
+let appearancePrievBtn = document.getElementById("appearance-priew-btn");
+let appearanceNextBtn = document.getElementById("appearance-next-btn");
+
+let totalAppearanceOption = Object.keys(appearance).length;
+
+document.addEventListener("DOMContentLoaded", fillAppearanceSlider);
+
+function fillAppearanceSlider() {
+  appearanceImgOne.src = appearance[appearanceCounterOne].src;
+  appearanceNameOne.innerHTML = appearance[appearanceCounterOne].name;
+  appearancePriceOne.innerHTML = appearance[appearanceCounterOne].price;
+
+  appearanceImgTwo.src = appearance[appearanceCounterTwo].src;
+  appearanceNameTwo.innerHTML = appearance[appearanceCounterTwo].name;
+  appearancePriceTwo.innerHTML = appearance[appearanceCounterTwo].price;
+
+  appearanceQuantity.innerHTML = appearanceCounterOne + "\/" + totalAppearanceOption;
+}
+
+appearanceNextBtn.addEventListener('click', function () {
+  appearanceCounterOne++;
+  appearanceCounterTwo++;
+
+  if (appearanceCounterOne > Object.keys(appearance).length) {
+    appearanceCounterOne = 1;
+  }
+  if (appearanceCounterTwo > Object.keys(appearance).length) {
+    appearanceCounterTwo = 1;
+  }
+  fillAppearanceSlider(appearanceCounterOne);
+  fillAppearanceSlider(appearanceCounterTwo);
+});
+
+appearancePrievBtn.addEventListener('click', function () {
+  appearanceCounterOne--;
+  appearanceCounterTwo--;
+
+  if (appearanceCounterOne <= 0) {
+    appearanceCounterOne = Object.keys(appearance).length;
+  }
+  if (appearanceCounterTwo <= 0) {
+    appearanceCounterTwo = Object.keys(appearance).length;
+  }
+  fillAppearanceSlider(appearanceCounterOne);
+  fillAppearanceSlider(appearanceCounterTwo);
+});
+
+let appearanceCard = document.getElementsByClassName("appearance-card");
+let inputAppearance = document.getElementById("input-appearance");
+
+for(let i = 0; i < appearanceCard.length; i++){
+  appearanceCard[i].addEventListener("click", function(){
+    let appearanceName =  this.querySelector(".appearance-name");
+    this.classList.toggle("animation");
+    let card = this;
+    setTimeout(function () {
+      card.classList.remove('animation');
+    }, 250);
+    inputAppearance.value = appearanceName.innerHTML;
+  })
 }
