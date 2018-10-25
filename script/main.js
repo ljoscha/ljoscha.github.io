@@ -80,6 +80,14 @@ var appearance = {
   }
 }
 
+function burgerClick(button) {
+  button.classList.toggle("change");
+  let mobileNavigation = document.getElementById("mobile-navigation");
+  mobileNavigation.classList.toggle("flex");
+}
+
+
+
 document.addEventListener("DOMContentLoaded", fillSlider);
 
 function fillSlider() {
