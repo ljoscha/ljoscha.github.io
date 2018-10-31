@@ -128,7 +128,7 @@ nextBtn.addEventListener('click', function () {
   if (counter > Object.keys(review).length) {
     counter = 1;
   }
-  slider(counter)
+  slider(counter);
 });
 
 priewBtn.addEventListener('click', function () {

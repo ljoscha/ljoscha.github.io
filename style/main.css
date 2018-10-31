@@ -286,16 +286,25 @@ body
 
 .intro
 {
-    /* padding-left: 5%; */
     padding-top: 160px;
     padding-bottom: 295px;
 
     background-image: url(../img/intro-cake-1.png);
     background-repeat: no-repeat;
-    /* background-position-x: 550px; */
-    /* background-position: right; */
     background-position: 100%;
     background-size: contain;
+}
+
+.intro-content
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+        flex-direction: column;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
 }
 
 .intro-title
@@ -1021,6 +1030,7 @@ body
     margin-top: 50px;
     margin-bottom: 50px;
 
+    text-align: center;
     letter-spacing: 2px;
 
     color: #2d2829;
@@ -1724,22 +1734,61 @@ section.features
 
     .intro
     {
-        padding: 100px 0;
+        padding: 150px 0;
+
+        background-image: url(../img/intro-cake.png);
+        background-position: center -250px;
+    }
+
+    .intro-content
+    {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 
     .intro-title
     {
         font-size: 60px;
+
+        width: 285px;
+
+        text-align: center;
     }
 
-    .intro-feature
+    .intro-content span
     {
-        margin-bottom: 20px;
+        font-size: 32px;
+
+        margin-bottom: 0;
+    }
+
+    .intro .intro-feature
+    {
+        font-size: 16px;
+        font-weight: bold;
+
+        width: 100%;
+        padding: 30px 0 30px 70px;
+
+        background-position: left center;
     }
 
     .intro a
     {
         margin-bottom: 100px;
+        margin-bottom: 0;
+
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+
+    .products-title
+    {
+        margin-bottom: 40px;
+
+        text-align: center;
     }
 
     .products-left
@@ -1846,15 +1895,14 @@ section.features
 
     .appearance-container
     {
-            flex-direction: column;
-
         margin-top: 140px;
+        margin-bottom: 20px;
 
         background: none;
 
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 
     .appearance-content
@@ -1877,26 +1925,19 @@ section.features
                 box-shadow: 0 0 12px 1px rgba(163, 6, 60, .05);
     }
 
-    .appearance-card + .appearance-card
+    .appearance-card.disabled
     {
-        margin-top: 40px;
-        margin-left: 0;
+        display: none;
     }
 
     .appearance-container .btn-priew
     {
         margin: 0;
-
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
     }
 
     .appearance-container .btn-next
     {
         margin: 0;
-
-        -webkit-transform: rotate(-135deg);
-                transform: rotate(-135deg);
     }
 
     .appearance-quantity
@@ -1911,6 +1952,8 @@ section.features
     {
             flex-direction: column;
 
+        width: 100%;
+
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1922,6 +1965,7 @@ section.features
     .individual-form fieldset
     {
         width: 100%;
+        max-width: 100%;
 
         text-align: center;
     }
@@ -1930,13 +1974,22 @@ section.features
     {
         width: 100%;
         margin-bottom: 20px;
+        padding: 10px;
 
         text-align: center;
+
+        border: 1px solid #c1b0af;
+        border-radius: 20px;
+    }
+
+    .individual-form-btn
+    {
+        margin-top: 20px;
     }
 
     .reviews
     {
-        margin-bottom: 55px;
+        margin-bottom: 0;
     }
 
     .reviews-content
@@ -1978,6 +2031,13 @@ section.features
     {
         -ms-flex-item-align: auto;
         align-self: auto;
+    }
+
+    section.features
+    {
+        background-image: url(../img/feature-bcg-3.png);
+        background-position: center bottom;
+        background-size: contain;
     }
 
     .features .features-item
@@ -2030,11 +2090,35 @@ section.features
         background-position-y: top;
     }
 
+    .features .features-item-last
+    {
+        margin-bottom: 250px;
+    }
+
+    .order
+    {
+        padding: 40px 0;
+
+        background: #e3353d;
+    }
+
+    .order .wrapper
+    {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
     .order-content .order-title
     {
         margin: 0;
 
         text-align: center;
+    }
+
+    .order-list-item
+    {
+        margin-bottom: 20px;
     }
 
     .contacts .contacts-title
@@ -2120,7 +2204,7 @@ section.features
     .main-footer a
     {
         padding-left: 0;
-
+        display: block;
         color: white;
     }
 
@@ -2194,17 +2278,55 @@ section.features
 
     .intro
     {
-        padding: 100px 0;
+        padding: 200px 0;
+
+        background-image: url(../img/intro-cake.png);
+        background-position: center -400px;
     }
 
-    .intro-feature
+    .intro-content
     {
-        margin-bottom: 20px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .intro-title
+    {
+        font-size: 60px;
+
+        width: 285px;
+
+        text-align: center;
+    }
+
+    .intro-content span
+    {
+        font-size: 32px;
+
+        margin-bottom: 0;
+    }
+
+    .intro .intro-feature
+    {
+        font-size: 16px;
+        font-weight: bold;
+
+        width: 100%;
+        /* margin-bottom: 20px; */
+        padding: 30px 0 30px 70px;
+
+        background-position: left center;
     }
 
     .intro a
     {
         margin-bottom: 100px;
+        margin-bottom: 0;
+
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
     }
 
     .products-panel
@@ -2214,6 +2336,13 @@ section.features
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
+    }
+
+    .products-title
+    {
+        margin-bottom: 40px;
+
+        text-align: center;
     }
 
     .products-left
@@ -2326,15 +2455,14 @@ section.features
 
     .appearance-container
     {
-            flex-direction: column;
-
         margin-top: 140px;
+        margin-bottom: 20px;
 
         background: none;
 
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 
     .appearance-content
@@ -2351,32 +2479,25 @@ section.features
     .appearance-card
     {
         max-width: 100%;
-        min-height: 320px;
+        min-height: 400px;
 
         -webkit-box-shadow: 0 0 12px 1px rgba(163, 6, 60, .05);
                 box-shadow: 0 0 12px 1px rgba(163, 6, 60, .05);
     }
 
-    .appearance-card + .appearance-card
+    .appearance-card.disabled
     {
-        margin-top: 40px;
-        margin-left: 0;
+        display: none;
     }
 
     .appearance-container .btn-priew
     {
         margin: 0;
-
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
     }
 
     .appearance-container .btn-next
     {
         margin: 0;
-
-        -webkit-transform: rotate(-135deg);
-                transform: rotate(-135deg);
     }
 
     .appearance-quantity
@@ -2410,13 +2531,17 @@ section.features
     {
         width: 100%;
         margin-bottom: 20px;
+        padding: 10px;
 
         text-align: center;
+
+        border: 1px solid #c1b0af;
+        border-radius: 20px;
     }
 
     .reviews
     {
-        margin-bottom: 55px;
+        margin-bottom: 0;
     }
 
     .reviews-content
@@ -2458,6 +2583,13 @@ section.features
     {
         -ms-flex-item-align: auto;
         align-self: auto;
+    }
+
+    section.features
+    {
+        background-image: url(../img/feature-bcg-3.png);
+        background-position: center bottom;
+        background-size: contain;
     }
 
     .features .features-item
@@ -2510,11 +2642,35 @@ section.features
         background-position-y: top;
     }
 
+    .features .features-item-last
+    {
+        margin-bottom: 325px;
+    }
+
+    .order
+    {
+        padding: 40px 0;
+
+        background: #e3353d;
+    }
+
+    .order .wrapper
+    {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
     .order-content .order-title
     {
         margin: 0;
 
         text-align: center;
+    }
+
+    .order-list-item
+    {
+        margin-bottom: 20px;
     }
 
     .contacts .contacts-title
@@ -2600,7 +2756,7 @@ section.features
     .main-footer a
     {
         padding-left: 0;
-
+        display: block;
         color: white;
     }
 
@@ -2676,6 +2832,7 @@ section.features
 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
+    font-weight: bold;
 
     text-align: center;
     text-transform: uppercase;
@@ -2714,16 +2871,32 @@ section.features
 
     max-width: 1366px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 10px 5% 10px;
 
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 }
 
+.cakes-galery h1
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: bold;
+
+    width: 100%;
+
+    text-align: center;
+    /* margin: 0; */
+    letter-spacing: 2px;
+
+    color: #2d2829;
+}
+
 .cakes-galery div
 {
     margin-bottom: 10px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    padding: 0 5px;
 
     -ms-flex-preferred-size: 300px;
     flex-basis: 300px;
@@ -2738,6 +2911,8 @@ section.features
     overflow: hidden;
 
     width: 100%;
+
+    border-radius: 3px;
 }
 
 .cake-footer

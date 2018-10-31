@@ -14,28 +14,16 @@
 </head>
 
 <body>
-    <div class="wrapper wrapper-off">
-      <header class="main-header">
-        <nav class="main-navigation">
-          <a class="main-logo">Königsberg <br> Cake</a>
-          <div class="burger" onclick="burgerClick(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
-          <ul class="site-navigation">
-            <li><a href="#products">Наши торты</a></li>
-            <li><a href="#individuals">Индивидуальный заказ</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#features">О нас</a></li>
-            <li><a href="#order">Как заказать</a></li>
-            <li><a href="#contacts">Контакты</a></li>
-          </ul>
-          <div class="contact-number">
-            <a href="tel:+79068999226">+7 906 899 92 26</a>
-          </div>
-        </nav>
-        <ul id="mobile-navigation" class="mobile-navigation">
+  <div class="wrapper wrapper-off">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a class="main-logo">Königsberg <br> Cake</a>
+        <div class="burger" onclick="burgerClick(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <ul class="site-navigation">
           <li><a href="#products">Наши торты</a></li>
           <li><a href="#individuals">Индивидуальный заказ</a></li>
           <li><a href="#reviews">Отзывы</a></li>
@@ -43,10 +31,23 @@
           <li><a href="#order">Как заказать</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
-      </header>
-    </div>
-    <section class="intro">
-      <div class="wrapper">
+        <div class="contact-number">
+          <a href="tel:+79068999226">+7 906 899 92 26</a>
+        </div>
+      </nav>
+      <ul id="mobile-navigation" class="mobile-navigation">
+        <li><a href="#products">Наши торты</a></li>
+        <li><a href="#individuals">Индивидуальный заказ</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#features">О нас</a></li>
+        <li><a href="#order">Как заказать</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </header>
+  </div>
+  <section class="intro">
+    <div class="wrapper">
+      <div class="intro-content">
         <h1 class="intro-title">Торты на заказ</h1>
         <span>Ручная работа</span>
         <a href="#products">Выбрать торт</a>
@@ -55,290 +56,291 @@
           <div class="intro-feature">Доставка бесплатно при заказе от 2000р*</div>
         </div>
       </div>
-    </section>
-
-    <div class="wrapper">
-      <section class="products" id="products">
-        <h1 class="products-title">Наши торты</h1>
-        <div class="products-panel">
-          <div class="products-left products-big">
-            <div class="product product-big product-classic">
-              <p>Классические</p>
-              <p>24 вида</p>
-              <a href="/more.html">Смотреть &rarr;</a>
-            </div>
-          </div>
-          <div class="products-right products-small">
-            <div class="product product-small product-mousse">
-              <p>Муссовые</p>
-              <p>12 вида</p>
-              <a href="#">Смотреть &rarr;</a>
-            </div>
-            <div class="product product-small product-wedding">
-              <p>Свадебные</p>
-              <p>20 видов</p>
-              <a href="#">Смотреть &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-panel">
-          <div class="products-left products-small">
-            <div class="product product-small product-men ">
-              <p>Мужчинам</p>
-              <p>12 видов</p>
-              <a href="#">Смотреть &rarr;</a>
-            </div>
-            <div class="product product-small product-women">
-              <p>Женищинам</p>
-              <p>16 видов</p>
-              <a href="#">Смотреть &rarr;</a>
-            </div>
-          </div>
-          <div class="products-right products-big">
-            <div class="product product-big product-kids">
-              <p>Детские</p>
-              <p>18 вида</p>
-              <a href="#">Смотреть &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+  </section>
 
-    <div class="wrapper">
-      <section class="individuals" id="individuals">
-        <h2 class="individuals-title">Индивидуальный заказ</h2>
-        <p class="individuals-question">Соберите торт в 3 шага</p>
-
-        <div class="individual-panel">
-          <div class="panel-title">
-            <p>01</p>
-            <p>Выберите <br> начинку</p>
-          </div>
-          <div class="filling-container">
-            <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
-            <div class="filling-content" id="filling-slider">
-              <div class="filling-img">
-                <img id="filling-img" width="200" height="" src="./img/filling-1.png" alt="Шоколадный ганш">
-              </div>
-              <div class="filling-info">
-                <h3 id="filling-title" class="filling-title">Шоколадный ганш</h3>
-                <p id="filling-description" class="filling-description">Ароматный шоколадный бисквит, густой шоколадный
-                  крем – самый шоколадный из всех возможных десертов!</p>
-                <p id="filling-price" class="filling-price">1000 руб/кг</p>
-                <button id="filling-btn" class="filling-button main-btn">Выбрать</button>
-                <p id="filling-quantity" class="filling-quantity">1/12</p>
-              </div>
-            </div>
-            <button id="filling-next-btn" type="button" aria-label="Следующая начинка" class="btn-next"></button>
+  <div class="wrapper">
+    <section class="products" id="products">
+      <h1 class="products-title">Наши торты</h1>
+      <div class="products-panel">
+        <div class="products-left products-big">
+          <div class="product product-big product-classic">
+            <p>Классические</p>
+            <p>24 вида</p>
+            <a href="/more.html">Смотреть &rarr;</a>
           </div>
         </div>
-
-        <div class="individual-panel">
-          <div class="panel-title">
-            <p>02</p>
-            <p>Размер</p>
+        <div class="products-right products-small">
+          <div class="product product-small product-mousse">
+            <p>Муссовые</p>
+            <p>12 вида</p>
+            <a href="#">Смотреть &rarr;</a>
           </div>
-          <div class="cakes">
-            <div class="cake">
-              <div class="size size-small">
-                <p>1 кг</p>
-              </div>
-              <p>17-18 см</p>
-              <p>(6 персон)</p>
-            </div>
+          <div class="product product-small product-wedding">
+            <p>Свадебные</p>
+            <p>20 видов</p>
+            <a href="#">Смотреть &rarr;</a>
+          </div>
+        </div>
+      </div>
 
-            <div class="cake">
-              <div class="size size-middle">
-                <p>2 кг</p>
-              </div>
-              <p>23-14 см</p>
-              <p>(10-12 персон)</p>
-            </div>
+      <div class="products-panel">
+        <div class="products-left products-small">
+          <div class="product product-small product-men ">
+            <p>Мужчинам</p>
+            <p>12 видов</p>
+            <a href="#">Смотреть &rarr;</a>
+          </div>
+          <div class="product product-small product-women">
+            <p>Женищинам</p>
+            <p>16 видов</p>
+            <a href="#">Смотреть &rarr;</a>
+          </div>
+        </div>
+        <div class="products-right products-big">
+          <div class="product product-big product-kids">
+            <p>Детские</p>
+            <p>18 вида</p>
+            <a href="#">Смотреть &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-            <div class="cake">
+  <div class="wrapper">
+    <section class="individuals" id="individuals">
+      <h2 class="individuals-title">Индивидуальный заказ</h2>
+      <p class="individuals-question">Соберите торт в 3 шага</p>
+
+      <div class="individual-panel">
+        <div class="panel-title">
+          <p>01</p>
+          <p>Выберите <br> начинку</p>
+        </div>
+        <div class="filling-container">
+          <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
+          <div class="filling-content" id="filling-slider">
+            <div class="filling-img">
+              <img id="filling-img" width="200" height="" src="./img/filling-1.png" alt="Шоколадный ганш">
+            </div>
+            <div class="filling-info">
+              <h3 id="filling-title" class="filling-title">Шоколадный ганш</h3>
+              <p id="filling-description" class="filling-description">Ароматный шоколадный бисквит, густой шоколадный
+                крем – самый шоколадный из всех возможных десертов!</p>
+              <p id="filling-price" class="filling-price">1000 руб/кг</p>
+              <button id="filling-btn" class="filling-button main-btn">Выбрать</button>
+              <p id="filling-quantity" class="filling-quantity">1/12</p>
+            </div>
+          </div>
+          <button id="filling-next-btn" type="button" aria-label="Следующая начинка" class="btn-next"></button>
+        </div>
+      </div>
+
+      <div class="individual-panel">
+        <div class="panel-title">
+          <p>02</p>
+          <p>Размер</p>
+        </div>
+        <div class="cakes">
+          <div class="cake">
+            <div class="size size-small">
+              <p>1 кг</p>
+            </div>
+            <p>17-18 см</p>
+            <p>(6 персон)</p>
+          </div>
+
+          <div class="cake">
+            <div class="size size-middle">
+              <p>2 кг</p>
+            </div>
+            <p>23-14 см</p>
+            <p>(10-12 персон)</p>
+          </div>
+
+          <div class="cake">
+            <div class="size size-big">
               <div class="size size-big">
-                <div class="size size-big">
-                  <p>5 кг</p>
-                </div>
+                <p>5 кг</p>
               </div>
-              <p>Два яруса 25 и 20 см</p>
-              <p>(15 - 20 персон)</p>
             </div>
+            <p>Два яруса 25 и 20 см</p>
+            <p>(15 - 20 персон)</p>
+          </div>
 
-            <div class="cake">
+          <div class="cake">
+            <div class="size size-extra-big">
               <div class="size size-extra-big">
                 <div class="size size-extra-big">
-                  <div class="size size-extra-big">
-                    <p>8 кг</p>
-                  </div>
+                  <p>8 кг</p>
                 </div>
               </div>
-              <p>Три яруса 30, 25 и 18 см</p>
-              <p>(25 - 30 персон)</p>
             </div>
+            <p>Три яруса 30, 25 и 18 см</p>
+            <p>(25 - 30 персон)</p>
           </div>
         </div>
+      </div>
 
-        <div class="individual-panel">
-          <div class="panel-title">
-            <p>03</p>
-            <p>Оформление</p>
-          </div>
+      <div class="individual-panel">
+        <div class="panel-title">
+          <p>03</p>
+          <p>Оформление</p>
+        </div>
 
-          <div id="appearance-container" class="appearance-container">
-            <button id="appearance-priew-btn" type="button" aria-label="Предыдущее оформление" class="btn-priew"></button>
-            <div class="appearance-content" id="appearance-slider">
-              <div class="appearance-card">
-                <img id="appearance-img-1" src="./img/appearance-1.jpg" alt="Ягодное ассорти">
-                <p id="appearance-name-1" class="appearance-name">Ягодное ассорти</p>
-                <p id="appearance-price-1" class="appearance-price">700 руб/кг</p>
-              </div>
-              <p id="appearance-quantity" class="appearance-quantity">1/12</p>
-              <div class="appearance-card">
-                <img id="appearance-img-2" src="./img/appearance-2.jpg" alt="Маршмэллоу">
-                <p id="appearance-name-2" class="appearance-name">Маршмэллоу</p>
-                <p id="appearance-price-2" class="appearance-price">600 руб/кг</p>
-              </div>
+        <div id="appearance-container" class="appearance-container">
+          <button id="appearance-priew-btn" type="button" aria-label="Предыдущее оформление" class="btn-priew"></button>
+          <div class="appearance-content" id="appearance-slider">
+            <div class="appearance-card">
+              <img id="appearance-img-1" src="./img/appearance-1.jpg" alt="Ягодное ассорти">
+              <p id="appearance-name-1" class="appearance-name">Ягодное ассорти</p>
+              <p id="appearance-price-1" class="appearance-price">700 руб/кг</p>
             </div>
-            <!-- <p id="appearance-quantity" class="appearance-quantity">1/12</p> -->
-            <button id="appearance-next-btn" type="button" aria-label="Следующее оформление" class="btn-next"></button>
+            <p id="appearance-quantity" class="appearance-quantity">1/12</p>
+            <div class="appearance-card disabled">
+              <img id="appearance-img-2" src="./img/appearance-2.jpg" alt="Маршмэллоу">
+              <p id="appearance-name-2" class="appearance-name">Маршмэллоу</p>
+              <p id="appearance-price-2" class="appearance-price">600 руб/кг</p>
+            </div>
           </div>
-          <div>
-            <h3 class="form-title">Ваш выбор</h3>
-            <form class="individual-form" action="https://echo.htmlacademy.ru" method="GET">
-              <fieldset>
-                <legend>Начинка</legend>
-                <input id="input-filling" type="text" placeholder="Начинка" name="filling" readonly required>
-              </fieldset>
-              <fieldset>
-                <legend>Размер</legend>
-                <input id="input-size" type="text" placeholder="Размер" name="size" readonly required>
-              </fieldset>
-              <fieldset>
-                <legend>Оформление</legend>
-                <input id="input-appearance" type="text" placeholder="Оформление" name="appearance" readonly required>
-              </fieldset>
-              <button class="main-btn individual-form-btn">Заказать торт</button>
-            </form>
+          <!-- <p id="appearance-quantity" class="appearance-quantity">1/12</p> -->
+          <button id="appearance-next-btn" type="button" aria-label="Следующее оформление" class="btn-next"></button>
+        </div>
+        <div>
+          <h3 class="form-title">Ваш выбор</h3>
+          <form class="individual-form" action="https://echo.htmlacademy.ru" method="GET">
+            <fieldset>
+              <legend>Начинка</legend>
+              <input id="input-filling" type="text" placeholder="Начинка" name="filling" readonly required>
+            </fieldset>
+            <fieldset>
+              <legend>Размер</legend>
+              <input id="input-size" type="text" placeholder="Размер" name="size" readonly required>
+            </fieldset>
+            <fieldset>
+              <legend>Оформление</legend>
+              <input id="input-appearance" type="text" placeholder="Оформление" name="appearance" readonly required>
+            </fieldset>
+            <button class="main-btn individual-form-btn">Заказать торт</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrapper">
+    <section class="reviews" id="reviews">
+      <h2 class="reviews-title">Отзывы</h2>
+      <div class="reviews-container">
+        <button id="priew-btn" type="button" aria-label="Предыдущий комментарий" class="btn-priew"></button>
+        <div class="reviews-content" id="slider-content">
+          <div class="reviews-img">
+            <img id="slider-img" width="209" height="209" src="./img/Review-1.jpg" alt="Maria">
+          </div>
+          <div class="reviews-review">
+            <h3 id="slider-name" class="reviews-name">Мария</h3>
+            <p id="slider-age" class="reviews-age">Юрист, 33 года</p>
+            <p id="slider-comment" class="reviews-comment"> Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Nihil saepe accusantium dolorem error culpa voluptate, facere dolores
+              eligendi non soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet,
+              debitis.</p>
+            <p id="slider-quantity" class="reviews-quantity">1/26</p>
           </div>
         </div>
-      </section>
-    </div>
+        <button id="next-btn" type="button" aria-label="Следующий комментарий" class="btn-next"></button>
+      </div>
+    </section>
+  </div>
 
+  <section class="features" id="features">
     <div class="wrapper">
-      <section class="reviews" id="reviews">
-        <h2 class="reviews-title">Отзывы</h2>
-        <div class="reviews-container">
-          <button id="priew-btn" type="button" aria-label="Предыдущий комментарий" class="btn-priew"></button>
-          <div class="reviews-content" id="slider-content">
-            <div class="reviews-img">
-              <img id="slider-img" width="209" height="209" src="./img/Review-1.jpg" alt="Maria">
-            </div>
-            <div class="reviews-review">
-              <h3 id="slider-name" class="reviews-name">Мария</h3>
-              <p id="slider-age" class="reviews-age">Юрист, 33 года</p>
-              <p id="slider-comment" class="reviews-comment"> Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Nihil saepe accusantium dolorem error culpa voluptate, facere dolores
-                eligendi non soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet,
-                debitis.</p>
-              <p id="slider-quantity" class="reviews-quantity">1/26</p>
-            </div>
-          </div>
-          <button id="next-btn" type="button" aria-label="Следующий комментарий" class="btn-next"></button>
-        </div>
-      </section>
+      <h2 class="features-title">Наши преимущества</h2>
+      <p class="features-question">Почему нас выбирают ?</p>
+      <div class="features-item features-item-first">
+        <b class="feature-title">Без искусственных добавок</b>
+        <p class="feature-middle">Работаем с натуральными ингредиентами и свежими продуктами</p>
+      </div>
+      <div class="features-item features-item-second">
+        <b class="feature-title">Свежий торт в день торжества</b>
+        <p class="feature-small">Торты изготавливаются в течение суток до отправки</p>
+      </div>
+      <div class="features-item features-item-last">
+        <h2 class="features-title">Забота о клиентах</h2>
+        <p class="features-question">Для нас важно</p>
+        <P class="feature-big">Нам важно чтобы каждый торт был безупречным, как внутри, так и снаружи, чтобы он был
+          создан исключительно для вас и для вашего события.</P>
+      </div>
     </div>
+  </section>
 
-    <section class="features" id="features">
-      <div class="wrapper">
-        <h2 class="features-title">Наши преимущества</h2>
-        <p class="features-question">Почему нас выбирают ?</p>
-        <div class="features-item features-item-first">
-          <b class="feature-title">Без искусственных добавок</b>
-          <p class="feature-middle">Работаем с натуральными ингредиентами и свежими продуктами</p>
-        </div>
-        <div class="features-item features-item-second">
-          <b class="feature-title">Свежий торт в день торжества</b>
-          <p class="feature-small">Торты изготавливаются в течение суток до отправки</p>
-        </div>
-        <div class="features-item features-item-last">
-          <h2 class="features-title">Забота о клиентах</h2>
-          <p class="features-question">Для нас важно</p>
-          <P class="feature-big">Нам важно чтобы каждый торт был безупречным, как внутри, так и снаружи, чтобы он был
-            создан исключительно для вас и для вашего события.</P>
-        </div>
+  <section class="order" id="order">
+    <div class="wrapper">
+      <div class="order-content">
+        <h2 class="order-title">Как заказать</h2>
+        <ul class="order-list">
+          <li class="order-list-item">
+            <b>Срок заказа</b>
+            <p>Размещать заказы желательно за 2-3 дня. На выходные заказы лучше размещатьтминимум за
+              неделю. </p>
+          </li>
+          <li class="order-list-item">
+            <b>Доставка по городу</b>
+            <p>Доставка в пределах города 200 рублей , при заказе на сумму более 2000 доставка бесплатно.</p>
+          </li>
+          <li class="order-list-item">
+            <b>Доставка за городом </b>
+            <p>Доставка за пределами города рассчитывается индивидуально.</p>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="order" id="order">
-      <div class="wrapper">
-        <div class="order-content">
-          <h2 class="order-title">Как заказать</h2>
-          <ul class="order-list">
-            <li class="order-list-item">
-              <b>Срок заказа</b>
-              <p>Размещать заказы желательно за 2-3 дня. На выходные заказы лучше размещатьтминимум за
-                неделю. </p>
-            </li>
-            <li class="order-list-item">
-              <b>Доставка по городу</b>
-              <p>Доставка в пределах города 200 рублей , при заказе на сумму более 2000 доставка бесплатно.</p>
-            </li>
-            <li class="order-list-item">
-              <b>Доставка за городом </b>
-              <p>Доставка за пределами города рассчитывается индивидуально.</p>
-            </li>
-          </ul>
+  <section class="contacts" id="contacts">
+    <div class="wrapper">
+      <h2 class="contacts-title">Контакты</h2>
+      <p class="contacts-question">Остались вопросы ?</p>
+      <div class="contacts-flex">
+        <div class="contacts-form">
+          <p>Заполните форму ниже и мы свяжемся с Вами</p>
+          <form action="https://echo.htmlacademy.ru" method="POST">
+            <input type="text" name="name" placeholder="Введите имя">
+            <input type="email" name="email" placeholder="E-mail адрес">
+            <textarea name="question" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
+            <button class="main-btn">Отправить</button>
+          </form>
         </div>
-      </div>
-    </section>
-
-    <section class="contacts" id="contacts">
-      <div class="wrapper">
-        <h2 class="contacts-title">Контакты</h2>
-        <p class="contacts-question">Остались вопросы ?</p>
-        <div class="contacts-flex">
-          <div class="contacts-form">
-            <p>Заполните форму ниже и мы свяжемся с Вами</p>
-            <form action="https://echo.htmlacademy.ru" method="POST">
-              <input type="text" name="name" placeholder="Введите имя">
-              <input type="email" name="email" placeholder="E-mail адрес">
-              <textarea name="question" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
-              <button class="main-btn">Отправить</button>
-            </form>
-          </div>
-          <div class="contacts-info">
-            <p>Или позвоните по телефону: <a class="tel" href="tel:+79068999226">+7 906 899 92 26</a></p>
-            <p>Наша почта: <a class="email" href="mailto:bakerybypavel@mail.ru">bakerybypavel@mail.ru</a></p>
-            <div class="contacts-social">
-              <p>Мы в соц сетях:</p>
-              <a class="social-btn btn-inst" href="#" aria-label="Instagramm"></a>
-              <a class="social-btn btn-vk" href="#" aria-label="VK"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="wrapper">
-        <nav class="main-navigation">
-          <a class="main-logo">Königsberg <br> Cake</a>
-          <ul class="site-navigation">
-            <li><a href="#products">Наши торты</a></li>
-            <li><a href="#individuals">Индивидуальный заказ</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#features">О нас</a></li>
-            <li><a href="#order">Как заказать</a></li>
-            <li><a href="#contacts">Контакты</a></li>
-          </ul>
-          <div class="footer-social">
+        <div class="contacts-info">
+          <p>Или позвоните по телефону: <a class="tel" href="tel:+79068999226">+7 906 899 92 26</a></p>
+          <p>Наша почта: <a class="email" href="mailto:bakerybypavel@mail.ru">bakerybypavel@mail.ru</a></p>
+          <div class="contacts-social">
+            <p>Мы в соц сетях:</p>
             <a class="social-btn btn-inst" href="#" aria-label="Instagramm"></a>
             <a class="social-btn btn-vk" href="#" aria-label="VK"></a>
           </div>
-        </nav>
-    </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="wrapper">
+      <nav class="main-navigation">
+        <a class="main-logo">Königsberg <br> Cake</a>
+        <ul class="site-navigation">
+          <li><a href="#products">Наши торты</a></li>
+          <li><a href="#individuals">Индивидуальный заказ</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#features">О нас</a></li>
+          <li><a href="#order">Как заказать</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <div class="footer-social">
+          <a class="social-btn btn-inst" href="#" aria-label="Instagramm"></a>
+          <a class="social-btn btn-vk" href="#" aria-label="VK"></a>
+        </div>
+      </nav>
+  </footer>
   </div>
 
 
