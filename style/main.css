@@ -384,14 +384,16 @@ body
 
 .intro-feature:first-child
 {
-    background-image: url(../img/feature-1.png);
+    background-image: url(../img/feature-1.svg);
     background-repeat: no-repeat;
+    background-size: 55px;
 }
 
 .intro-feature:last-child
 {
-    background-image: url(../img/feature-2.png);
+    background-image: url(../img/feature-2.svg);
     background-repeat: no-repeat;
+    background-size: 55px;
 }
 
 /* Products */
@@ -491,6 +493,7 @@ body
     background-position: center;
     -webkit-box-shadow: 0 10px 12px 1px rgba(163, 6, 60, .05);
             box-shadow: 0 10px 12px 1px rgba(163, 6, 60, .05);
+    border-radius: 3px;
 }
 
 .product p:first-child
@@ -569,6 +572,11 @@ body
 
 /* Individuals */
 
+.error{
+    color: red;
+    border-color: red;
+}
+
 .individual-panel
 {
     position: relative;
@@ -580,6 +588,7 @@ body
     background-color: #fff;
     -webkit-box-shadow: 0 10px 12px 1px rgba(163, 6, 60, .05);
             box-shadow: 0 10px 12px 1px rgba(163, 6, 60, .05);
+    border-radius: 3px;
 }
 
 .individuals-title
@@ -898,6 +907,28 @@ body
     background-color: rgba(0, 0, 0, 0);
 }
 
+.individual-form .input-value
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    width: 100%;
+    padding: 5px 0;
+
+    color: rgba(0, 0, 0, .5);
+    border: none;
+    border-bottom: 1px solid #c1b0af;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+}
+
+.input-value.error{
+    border-color: red;
+    color: red;
+}
+
 .individual-form-btn
 {
     width: 225px;
@@ -948,6 +979,45 @@ body
     color: #2f2f2f;
 }
 
+.plate{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    margin: auto;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.plate-shadow{
+    -webkit-box-shadow: 0px 0px 12px 5px rgba(209, 135, 161, 0.3);
+    box-shadow: 0px 0px 12px 5px rgba(209, 135, 161, 0.3);
+}
+/* 
+.plate-shadow > .size{
+    background-color: #ffc0cb;
+    border-color: white;
+}
+
+.plate-shadow > .size > .size{
+    background-color: #fffdd0;
+    border-color: white;
+}
+
+.plate-shadow > .size > .size .size{
+    background-color:#ffc0cb;
+    border-color: white;
+} */
+
 .size
 {
     display: -webkit-box;
@@ -970,16 +1040,37 @@ body
     /* adapt */
 }
 
+.plate-small{
+    box-sizing: content-box;
+    height: 120px;
+    width: 120px;
+    padding: 10px;
+}
+
 .size-small
 {
     width: 110px;
     height: 110px;
 }
 
+.plate-middle{
+    box-sizing: content-box;
+    height: 165px;
+    width: 165px;
+    padding: 10px;
+}
+
 .size-middle
 {
     width: 155px;
     height: 155px;
+}
+
+.plate-big{
+    box-sizing: content-box;
+    height: 180px;
+    width: 180px;
+    padding: 10px;
 }
 
 .size-big
@@ -992,6 +1083,13 @@ body
 {
     width: 120px;
     height: 120px;
+}
+
+.plate-extra-big{
+    box-sizing: content-box;
+    height: 210px;
+    width: 210px;
+    padding: 10px;
 }
 
 .size-extra-big
@@ -1250,18 +1348,20 @@ section.features
 {
     margin-top: 110px;
 
-    background-image: url(../img/feature-1.png);
+    background-image: url(../img/feature-1.svg);
     background-repeat: no-repeat;
     background-position-y: center;
+    background-size: 65px;
 }
 
 .features .features-item-second
 {
     margin-bottom: 400px;
 
-    background-image: url(../img/feature-3.png);
+    background-image: url(../img/feature-3.svg);
     background-repeat: no-repeat;
     background-position-y: center;
+    background-size: 70px;
 }
 
 .features .features-item-last
@@ -1982,6 +2082,18 @@ section.features
         border-radius: 20px;
     }
 
+    .individual-form .input-value
+{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    text-align: center;
+
+    border: 1px solid #c1b0af;
+    border-radius: 20px;
+}
+
     .individual-form-btn
     {
         margin-top: 20px;
@@ -2528,6 +2640,18 @@ section.features
     }
 
     .individual-form input
+    {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+
+        text-align: center;
+
+        border: 1px solid #c1b0af;
+        border-radius: 20px;
+    }
+
+    .individual-form .input-value
     {
         width: 100%;
         margin-bottom: 20px;

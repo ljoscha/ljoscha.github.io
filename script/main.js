@@ -80,13 +80,13 @@ var appearance = {
   }
 }
 
+let inputValue = document.getElementsByClassName("input-value"); //individual-form p.input-value
+
 function burgerClick(button) {
   button.classList.toggle("change");
   let mobileNavigation = document.getElementById("mobile-navigation");
   mobileNavigation.classList.toggle("flex");
 }
-
-
 
 document.addEventListener("DOMContentLoaded", fillSlider);
 
@@ -149,21 +149,25 @@ for (let i = 0; i < cakes.length; i++) {
   cakes[i].addEventListener("click", cooseCake)
 }
 
-function cooseCake(event){
+let inputSize = document.getElementById("input-size");
+
+function cooseCake(event) {
   unCooseCake();
-  let cake = event.target.closest("div.cake > .size");
-  if(cake){
-    cake.style.backgroundColor = "#fac7c3";
+  let cake = event.target.closest("div.cake > .plate");
+  if (cake) {
+    cake.classList.add("plate-shadow");
     let p = cake.querySelector("p");
-    let inputSize = document.getElementById("input-size");
+    // let inputSize = document.getElementById("input-size");
     inputSize.value = p.innerHTML;
+    inputValue[1].innerHTML = p.innerHTML;
+    inputValue[1].classList.remove("error");
   }
 }
 
-function unCooseCake(){
-  let cakes = document.querySelectorAll("div.cake > .size");
-    for (let i = 0; i < cakes.length; i++) {
-      cakes[i].style.backgroundColor = "";  
+function unCooseCake() {
+  let cakes = document.querySelectorAll("div.cake > .plate");
+  for (let i = 0; i < cakes.length; i++) {
+    cakes[i].classList.remove("plate-shadow");
   }
 }
 
@@ -181,9 +185,12 @@ let fillingBtn = document.getElementById("filling-btn");
 let fillingPrievBtn = document.getElementById("filling-priew-btn");
 let fillingNextBtn = document.getElementById("filling-next-btn");
 
-fillingBtn.addEventListener("click", function(){
-  let inputFilling = document.getElementById("input-filling");
+let inputFilling = document.getElementById("input-filling");
+
+fillingBtn.addEventListener("click", function () {
   inputFilling.value = fillingTitle.innerHTML;
+  inputValue[0].innerHTML = fillingTitle.innerHTML;
+  inputValue[0].classList.remove("error");
 })
 
 let totalFillingOption = Object.keys(filling).length;
@@ -194,7 +201,7 @@ function fillFillingSlider() {
   fillingImg.src = filling[fillingCounter].src;
   fillingTitle.innerHTML = filling[fillingCounter].title;
   fillingDescription.innerHTML = filling[fillingCounter].description;
-  fillingPrice.innerHTML = filling[fillingCounter].price;  
+  fillingPrice.innerHTML = filling[fillingCounter].price;
   fillingQuantity.innerHTML = fillingCounter + "\/" + totalFillingOption;
 }
 
@@ -287,14 +294,43 @@ appearancePrievBtn.addEventListener('click', function () {
 let appearanceCard = document.getElementsByClassName("appearance-card");
 let inputAppearance = document.getElementById("input-appearance");
 
-for(let i = 0; i < appearanceCard.length; i++){
-  appearanceCard[i].addEventListener("click", function(){
-    let appearanceName =  this.querySelector(".appearance-name");
+for (let i = 0; i < appearanceCard.length; i++) {
+  appearanceCard[i].addEventListener("click", function () {
+    let appearanceName = this.querySelector(".appearance-name");
     this.classList.toggle("animation");
     let card = this;
     setTimeout(function () {
       card.classList.remove('animation');
     }, 250);
     inputAppearance.value = appearanceName.innerHTML;
+    inputValue[2].innerHTML = appearanceName.innerHTML;
+    inputValue[2].classList.remove("error");
   })
 }
+
+let individualForm = document.getElementById("individual-form");
+let antispam = document.getElementById("antispam");
+individualForm.addEventListener("submit", function (evt) {
+  // if ( !inputFilling.value || !inputSize.value || !inputAppearance.value) {
+  //   evt.preventDefault();
+
+  // }
+  if (!inputFilling.value) {
+    evt.preventDefault();
+    inputValue[0].classList.add("error")
+  }
+  if (!inputSize.value) {
+    evt.preventDefault();
+    inputValue[1].classList.add("error")
+  }
+
+  if (!inputAppearance.value) {
+    evt.preventDefault();
+    inputValue[2].classList.add("error")
+  }
+
+  if(!!antispam.value){
+    alert("spam");
+    evt.preventDefault();
+  }
+});
