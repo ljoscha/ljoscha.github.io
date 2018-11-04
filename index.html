@@ -53,7 +53,7 @@
         <a href="#products">Выбрать торт</a>
         <div class="intro-features">
           <div class="intro-feature">Натуральные ингридиенты</div>
-          <div class="intro-feature">Доставка бесплатно при заказе от 2000р*</div>
+          <div class="intro-feature">Доставка бесплатно при заказе от 4000р*</div>
         </div>
       </div>
     </div>
@@ -122,12 +122,11 @@
           <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
           <div class="filling-content" id="filling-slider">
             <div class="filling-img">
-              <img id="filling-img" width="200" height="200" src="./img/filling-1.png" alt="Шоколадный ганш">
+              <img id="filling-img" width="200" height="200" src="./img/filling-1.jpg" alt="Брюнетка">
             </div>
             <div class="filling-info">
-              <h3 id="filling-title" class="filling-title">Шоколадный ганш</h3>
-              <p id="filling-description" class="filling-description">Ароматный шоколадный бисквит, густой шоколадный
-                крем – самый шоколадный из всех возможных десертов!</p>
+              <h3 id="filling-title" class="filling-title">Брюнетка</h3>
+              <p id="filling-description" class="filling-description">Для самых ярких! Шоколадный бисквит с пропиткой, яркий вкус шоколадного крема (ганаша), нежная карамелизированная груша.</p>
               <p id="filling-price" class="filling-price">1000 руб/кг</p>
               <button id="filling-btn" class="filling-button main-btn">Выбрать</button>
               <p id="filling-quantity" class="filling-quantity">1/12</p>
@@ -220,7 +219,7 @@
             <fieldset>
               <legend>Начинка</legend>
               <input id="input-filling" class="visually-hidden" type="text" name="filling">
-              <p class="input-value">Начинку</p>
+              <p class="input-value">Начинка</p>
             </fieldset>
             <fieldset>
               <legend>Размер</legend>
@@ -230,7 +229,7 @@
             <fieldset>
               <legend>Оформление</legend>
               <input id="input-appearance" class="visually-hidden" type="text" name="appearance">
-              <input id="antispam" class="visually-hidden" type="text" name="spam">
+              <input id="email" class="visually-hidden" type="text" name="email">
               <p class="input-value">Оформление</p>
             </fieldset>
             <fieldset>
@@ -251,15 +250,12 @@
         <button id="priew-btn" type="button" aria-label="Предыдущий комментарий" class="btn-priew"></button>
         <div class="reviews-content" id="slider-content">
           <div class="reviews-img">
-            <img id="slider-img" width="209" height="209" src="./img/Review-1.jpg" alt="Maria">
+            <img id="slider-img" width="209" height="209" src="./img/rew-anna.jpg" alt="Maria">
           </div>
           <div class="reviews-review">
-            <h3 id="slider-name" class="reviews-name">Мария</h3>
-            <p id="slider-age" class="reviews-age">Юрист, 33 года</p>
-            <p id="slider-comment" class="reviews-comment"> Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Nihil saepe accusantium dolorem error culpa voluptate, facere dolores
-              eligendi non soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet,
-              debitis.</p>
+            <h3 id="slider-name" class="reviews-name">Аня</h3>
+            <p id="slider-age" class="reviews-age">Раб, 33 года</p>
+            <p id="slider-comment" class="reviews-comment">Огромное спасибо за мой юбилейный сюрприз! Восторг, восхищение, и масса положительных эмоций!</p>
             <p id="slider-quantity" class="reviews-quantity">1/26</p>
           </div>
         </div>
@@ -301,7 +297,7 @@
           </li>
           <li class="order-list-item">
             <b>Доставка по городу</b>
-            <p>Доставка в пределах города 200 рублей , при заказе на сумму более 2000 доставка бесплатно.</p>
+            <p>Доставка в пределах города 200 рублей , при заказе на сумму более 4000 доставка бесплатно.</p>
           </li>
           <li class="order-list-item">
             <b>Доставка за городом </b>
@@ -319,9 +315,10 @@
       <div class="contacts-flex">
         <div class="contacts-form">
           <p>Заполните форму ниже и мы свяжемся с Вами</p>
-          <form action="https://echo.htmlacademy.ru" method="POST">
+          <form id="contact-form" action="https://echo.htmlacademy.ru" method="POST">
             <input type="text" name="name" placeholder="Введите имя" required>
             <input type="text" placeholder="Введите телефон (+79ххххххххх)" pattern="(\+7|8)9[0-9]{9}" name="phone" maxlength="12" required>
+            <input class="visually-hidden" id="contact-email" type="text" placeholder="Введите email" name="email">
             <textarea name="question" cols="10" rows="1" placeholder="Ваш вопрос" required></textarea>
             <button class="main-btn">Отправить</button>
           </form>

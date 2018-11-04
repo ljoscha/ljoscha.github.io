@@ -2094,6 +2094,11 @@ section.features
     border-radius: 20px;
 }
 
+.input-value.error{
+    border-color: red;
+    color: red;
+}
+
     .individual-form-btn
     {
         margin-top: 20px;
@@ -2661,6 +2666,11 @@ section.features
 
         border: 1px solid #c1b0af;
         border-radius: 20px;
+    }
+
+    .input-value.error{
+        border-color: red;
+        color: red;
     }
 
     .reviews

@@ -88,7 +88,7 @@ function burgerClick(button) {
   mobileNavigation.classList.toggle("flex");
 }
 
-document.addEventListener("DOMContentLoaded", fillSlider);
+// document.addEventListener("DOMContentLoaded", fillSlider);
 
 function fillSlider() {
   name.innerHTML = review[counter].name;
@@ -113,6 +113,8 @@ let priewBtn = document.getElementById("priew-btn")
 let nextBtn = document.getElementById("next-btn")
 
 let totalReviews = Object.keys(review).length;
+
+quantity.innerHTML = counter + "\/" + totalReviews;
 
 function slider(counter) {
   fillSlider(counter);
@@ -195,7 +197,9 @@ fillingBtn.addEventListener("click", function () {
 
 let totalFillingOption = Object.keys(filling).length;
 
-document.addEventListener("DOMContentLoaded", fillFillingSlider);
+// document.addEventListener("DOMContentLoaded", fillFillingSlider);
+
+fillingQuantity.innerHTML = fillingCounter + "\/" + totalFillingOption;
 
 function fillFillingSlider() {
   fillingImg.src = filling[fillingCounter].src;
@@ -249,7 +253,9 @@ let appearanceNextBtn = document.getElementById("appearance-next-btn");
 
 let totalAppearanceOption = Object.keys(appearance).length;
 
-document.addEventListener("DOMContentLoaded", fillAppearanceSlider);
+// document.addEventListener("DOMContentLoaded", fillAppearanceSlider);
+
+appearanceQuantity.innerHTML = appearanceCounterOne + "\/" + totalAppearanceOption;
 
 function fillAppearanceSlider() {
   appearanceImgOne.src = appearance[appearanceCounterOne].src;
@@ -309,7 +315,7 @@ for (let i = 0; i < appearanceCard.length; i++) {
 }
 
 let individualForm = document.getElementById("individual-form");
-let antispam = document.getElementById("antispam");
+let antispam = document.getElementById("email");
 individualForm.addEventListener("submit", function (evt) {
   // if ( !inputFilling.value || !inputSize.value || !inputAppearance.value) {
   //   evt.preventDefault();
@@ -330,7 +336,15 @@ individualForm.addEventListener("submit", function (evt) {
   }
 
   if(!!antispam.value){
-    alert("spam");
+    evt.preventDefault();
+  }
+});
+
+let contactForm = document.getElementById("contact-form");
+let contactAntispam = document.getElementById("contact-email");
+
+contactForm.addEventListener("submit", function (evt) {
+  if(!!contactAntispam.value){
     evt.preventDefault();
   }
 });
