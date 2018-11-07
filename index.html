@@ -122,7 +122,7 @@
           <button id="filling-priew-btn" type="button" aria-label="Предыдущая начинка" class="btn-priew"></button>
           <div class="filling-content" id="filling-slider">
             <div class="filling-img">
-              <img id="filling-img" width="200" height="200" src="./img/filling-1.jpg" alt="Брюнетка">
+              <img id="filling-img" width="300" height="300" src="./img/filling-1.jpg" alt="Брюнетка">
             </div>
             <div class="filling-info">
               <h3 id="filling-title" class="filling-title">Брюнетка</h3>
@@ -215,7 +215,7 @@
         </div>
         <div>
           <h3 class="form-title">Ваш выбор</h3>
-          <form id="individual-form" action="https://echo.htmlacademy.ru" class="individual-form" method="GET">
+          <form id="individual-form" action="/telegram.php" class="individual-form" method="POST">
             <fieldset>
               <legend>Начинка</legend>
               <input id="input-filling" class="visually-hidden" type="text" name="filling">
@@ -234,9 +234,9 @@
             </fieldset>
             <fieldset>
               <legend>Телефон</legend>
-              <input type="text" placeholder="+79ххххххххх" pattern="(\+7|8)9[0-9]{9}" name="phone" maxlength="12" required>
+              <input id="input-phone" type="text" placeholder="+79ххххххххх" pattern="(\+7|8)9[0-9]{9}" name="phone" maxlength="12" required>
             </fieldset>
-            <button type="submit" class="main-btn individual-form-btn">Заказать торт</button>
+            <button type="submit" class="main-btn individual-form-btn" title="Проверьте ваш заказ">Заказать торт</button>
           </form>
         </div>
       </div>
