@@ -575,12 +575,6 @@ body
 
 /* Individuals */
 
-.error
-{
-    color: red;
-    border-color: red;
-}
-
 .individual-panel
 {
     position: relative;
@@ -913,27 +907,19 @@ body
     background-color: rgba(0, 0, 0, 0);
 }
 
-.individual-form .input-value
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-
-    width: 100%;
-    margin: 0;
-    padding: 5px 0;
-
-    color: rgba(0, 0, 0, .5);
-    border: none;
-    border-bottom: 1px solid #c1b0af;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.input-value.error
+.individual-form input.error
 {
     color: red;
     border-color: red;
+    border-width: 2px;
+}
+
+.individual-form input.error::-webkit-input-placeholder{
+    color:red;
+
+}
+.individual-form input.error::-moz-placeholder{
+    color:red;
 }
 
 .individual-form-btn
@@ -1645,7 +1631,7 @@ section.features
     -ms-flex-direction: column;
 }
 
-.contacts form input
+.contacts-form input
 {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -1660,12 +1646,27 @@ section.features
     background-color: rgba(0, 0, 0, 0);
 }
 
-.contacts form input:focus
+.contacts-form input.error
+{
+    color: red;
+    border-color: red;
+    border-width: 2px;
+}
+
+.contacts-form input.error::-webkit-input-placeholder{
+    color:red;
+
+}
+.contacts-form input.error::-moz-placeholder{
+    color:red;
+}
+
+.contacts-form input:focus
 {
     border-bottom: 1px solid #f50049;
 }
 
-.contacts form textarea
+.contacts-form textarea
 {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -1682,7 +1683,22 @@ section.features
     background-color: rgba(0, 0, 0, 0);
 }
 
-.contacts form textarea:focus
+.contacts-form textarea.error
+{
+    color: red;
+    border-color: red;
+    border-width: 2px;
+}
+
+.contacts-form textarea.error::-webkit-input-placeholder{
+    color:red;
+
+}
+.contacts-form textarea.error::-moz-placeholder{
+    color:red;
+}
+
+.contacts-form textarea:focus
 {
     border-bottom: 1px solid #f50049;
 }
@@ -2111,22 +2127,19 @@ section.features
         border-radius: 20px;
     }
 
-    .individual-form .input-value
-    {
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 10px;
-
-        text-align: center;
-
-        border: 1px solid #c1b0af;
-        border-radius: 20px;
-    }
-
-    .input-value.error
+    .individual-form input.error
     {
         color: red;
         border-color: red;
+        border-width: 2px;
+    }
+    
+    .individual-form input.error::-webkit-input-placeholder{
+        color:red;
+    
+    }
+    .individual-form input.error::-moz-placeholder{
+        color:red;
     }
 
     .individual-form-btn
@@ -2678,7 +2691,7 @@ section.features
     .individual-form fieldset
     {
         width: 100%;
-
+        max-width: 225px;
         text-align: center;
     }
 
@@ -2694,22 +2707,19 @@ section.features
         border-radius: 20px;
     }
 
-    .individual-form .input-value
-    {
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 10px;
-
-        text-align: center;
-
-        border: 1px solid #c1b0af;
-        border-radius: 20px;
-    }
-
-    .input-value.error
+    .individual-form input.error
     {
         color: red;
         border-color: red;
+        border-width: 2px;
+    }
+    
+    .individual-form input.error::-webkit-input-placeholder{
+        color:red;
+    
+    }
+    .individual-form input.error::-moz-placeholder{
+        color:red;
     }
 
     .reviews
@@ -2978,6 +2988,27 @@ section.features
     .filling-img img
     {
         max-width: 200px;
+    }
+
+    .individual-form{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form-title{
+        margin-bottom: 0;
+    }
+
+    .individual-form fieldset{
+        margin-top: 20px;
+    }
+
+    .individual-form input{
+        min-width: 170px;
+    }
+
+    .individual-form-btn{
+        margin-top: 20px;
     }
 
     .features .features-item

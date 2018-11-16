@@ -80,8 +80,6 @@ var appearance = {
   }
 }
 
-let inputValue = document.getElementsByClassName("input-value"); //individual-form p.input-value
-
 function burgerClick(button) {
   button.classList.toggle("change");
   let mobileNavigation = document.getElementById("mobile-navigation");
@@ -159,10 +157,8 @@ function cooseCake(event) {
   if (cake) {
     cake.classList.add("plate-shadow");
     let p = cake.querySelector("p");
-    // let inputSize = document.getElementById("input-size");
     inputSize.value = p.innerHTML;
-    inputValue[1].innerHTML = p.innerHTML;
-    inputValue[1].classList.remove("error");
+    inputSize.classList.remove("error");
   }
 }
 
@@ -191,8 +187,7 @@ let inputFilling = document.getElementById("input-filling");
 
 fillingBtn.addEventListener("click", function () {
   inputFilling.value = fillingTitle.innerHTML;
-  inputValue[0].innerHTML = fillingTitle.innerHTML;
-  inputValue[0].classList.remove("error");
+  inputFilling.classList.remove("error");
 })
 
 let totalFillingOption = Object.keys(filling).length;
@@ -309,42 +304,97 @@ for (let i = 0; i < appearanceCard.length; i++) {
       card.classList.remove('animation');
     }, 250);
     inputAppearance.value = appearanceName.innerHTML;
-    inputValue[2].innerHTML = appearanceName.innerHTML;
-    inputValue[2].classList.remove("error");
+    inputAppearance.classList.remove("error");
   })
 }
 
+// let individualForm = document.getElementById("individual-form");
 let individualForm = document.getElementById("individual-form");
-let antispam = document.getElementById("email");
-individualForm.addEventListener("submit", function (evt) {
-  // if ( !inputFilling.value || !inputSize.value || !inputAppearance.value) {
-  //   evt.preventDefault();
+let individualFormSubmit = document.getElementById("individual-form-submit");
+let inputIndividualPhone = document.getElementById("individual-phone");
 
-  // }
+
+// function onSubmitReCaptcha(token) {
+//   individualForm.submit();
+// }
+
+
+var idCaptcha1, idCaptcha2;
+var onloadReCaptchaInvisible = function() {
+  idCaptcha1 = grecaptcha.render('individual-form-recaptcha', {
+    "sitekey": "6LdH7HkUAAAAAEOUeEkZlDPAikplCLIfEaFX1S_b",
+    "callback": "onSubmitIndividualForm",
+    "size": "invisible"
+  });
+  idCaptcha2 = grecaptcha.render('contact-form-recaptcha', {
+    "sitekey": "6LdH7HkUAAAAAEOUeEkZlDPAikplCLIfEaFX1S_b",
+    "callback": "onSubmitContactForm",
+    "size": "invisible"
+  });
+};
+
+function onSubmitIndividualForm(token) {
+  individualForm.submit();
+}
+
+function onSubmitContactForm(token) {
+  contactForm.submit();
+}
+
+individualFormSubmit.addEventListener("click", function (evt) {
   if (!inputFilling.value) {
     evt.preventDefault();
-    inputValue[0].classList.add("error")
+    inputFilling.classList.add("error");
   }
   if (!inputSize.value) {
     evt.preventDefault();
-    inputValue[1].classList.add("error")
+    inputSize.classList.add("error");
   }
-
   if (!inputAppearance.value) {
     evt.preventDefault();
-    inputValue[2].classList.add("error")
+    inputAppearance.classList.add("error");
   }
-
-  if(!!antispam.value){
+  if(!inputIndividualPhone.value){
     evt.preventDefault();
+    inputIndividualPhone.classList.add("error");
+    inputIndividualPhone.addEventListener("keyup", errorReset);  
   }
-});
+  if(inputFilling.value && inputSize.value && inputAppearance.value && inputIndividualPhone.value) {
+    evt.preventDefault();
+    grecaptcha.execute(idCaptcha1);
+  }
+})
 
 let contactForm = document.getElementById("contact-form");
-let contactAntispam = document.getElementById("contact-email");
+let contactFormSubmit = document.getElementById("contact-form-submit");
 
-contactForm.addEventListener("submit", function (evt) {
-  if(!!contactAntispam.value){
+let contactName = document.getElementById("contact-name");
+let contactPhone = document.getElementById("contact-phone");
+let contactQuestion = document.getElementById("contact-question");
+
+contactFormSubmit.addEventListener("click", function (evt) {
+  if(!contactName.value){
     evt.preventDefault();
+    contactName.classList.add("error");
+    contactName.addEventListener("keyup", errorReset);
   }
-});
+  if(!contactPhone.value){
+    evt.preventDefault();
+    contactPhone.classList.add("error");
+    contactPhone.addEventListener("keyup", errorReset);    
+  }
+  if(!contactQuestion.value){
+    evt.preventDefault();
+    contactQuestion.classList.add("error");
+    contactQuestion.addEventListener("keyup", errorReset);    
+  }
+  if(contactName.value && contactPhone.value && contactQuestion.value){
+    evt.preventDefault();
+    grecaptcha.execute(idCaptcha2);
+  }
+})
+
+function errorReset(){
+  this.classList.remove("error");
+  this.removeEventListener.remove(("keyup", errorReset));
+}

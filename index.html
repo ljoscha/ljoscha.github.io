@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Königsberg Cake</title>
+  <title>"Königsberg Cake" Торты на заказ в Калининграде</title>
+  <meta name="description" content="Торты любой сложности. Индивидуальный подход к каждому клиенту. Учтем все предпочтения и сделаем Ваш праздник незабываемым!">
+  <meta name="keywords" content="торты на заказ,  калининград, индивидуальный подход, любая сложность, праздик, день рождения, свадьба" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Playfair+Display:400i,700,700i|Roboto&amp;subset=cyrillic"
     rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style/normalize.css">
   <link rel="stylesheet" type="text/css" href="style/main.css">
-
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadReCaptchaInvisible&render=explicit" async defer></script>
 </head>
 
 <body>
@@ -67,19 +69,19 @@
           <div class="product product-big product-classic">
             <p>Классические</p>
             <p>24 вида</p>
-            <a href="/more.html">Смотреть &rarr;</a>
+            <a href="/classic.html">Смотреть &rarr;</a>
           </div>
         </div>
         <div class="products-right products-small">
           <div class="product product-small product-mousse">
             <p>Муссовые</p>
             <p>12 вида</p>
-            <a href="#">Смотреть &rarr;</a>
+            <a href="/mousse.html">Смотреть &rarr;</a>
           </div>
           <div class="product product-small product-wedding">
             <p>Свадебные</p>
             <p>20 видов</p>
-            <a href="#">Смотреть &rarr;</a>
+            <a href="/wedding.html">Смотреть &rarr;</a>
           </div>
         </div>
       </div>
@@ -89,19 +91,19 @@
           <div class="product product-small product-men ">
             <p>Мужчинам</p>
             <p>12 видов</p>
-            <a href="#">Смотреть &rarr;</a>
+            <a href="/men.html">Смотреть &rarr;</a>
           </div>
           <div class="product product-small product-women">
             <p>Женищинам</p>
             <p>16 видов</p>
-            <a href="#">Смотреть &rarr;</a>
+            <a href="/women.html">Смотреть &rarr;</a>
           </div>
         </div>
         <div class="products-right products-big">
           <div class="product product-big product-kids">
             <p>Детские</p>
             <p>18 вида</p>
-            <a href="#">Смотреть &rarr;</a>
+            <a href="/children.html">Смотреть &rarr;</a>
           </div>
         </div>
       </div>
@@ -126,7 +128,8 @@
             </div>
             <div class="filling-info">
               <h3 id="filling-title" class="filling-title">Брюнетка</h3>
-              <p id="filling-description" class="filling-description">Для самых ярких! Шоколадный бисквит с пропиткой, яркий вкус шоколадного крема (ганаша), нежная карамелизированная груша.</p>
+              <p id="filling-description" class="filling-description">Для самых ярких! Шоколадный бисквит с пропиткой,
+                яркий вкус шоколадного крема (ганаша), нежная карамелизированная груша.</p>
               <p id="filling-price" class="filling-price">1000 руб/кг</p>
               <button id="filling-btn" class="filling-button main-btn">Выбрать</button>
               <p id="filling-quantity" class="filling-quantity">1/12</p>
@@ -215,28 +218,26 @@
         </div>
         <div>
           <h3 class="form-title">Ваш выбор</h3>
-          <form id="individual-form" action="/telegram.php" class="individual-form" method="POST">
+            <form id="individual-form" action="/individual-form.php" class="individual-form" method="POST">  
             <fieldset>
               <legend>Начинка</legend>
-              <input id="input-filling" class="visually-hidden" type="text" name="filling">
-              <p class="input-value">Начинка</p>
+              <input type="text" name="individual-filling" id="input-filling" placeholder="Выберите начинку" readonly>
+              <div id="individual-form-recaptcha"></div>
             </fieldset>
             <fieldset>
               <legend>Размер</legend>
-              <input id="input-size" class="visually-hidden" type="text" name="size">
-              <p class="input-value">Размер</p>
+              <input type="text" name="individual-size" id="input-size" placeholder="Выберите размер" readonly>
             </fieldset>
             <fieldset>
               <legend>Оформление</legend>
-              <input id="input-appearance" class="visually-hidden" type="text" name="appearance">
-              <input id="email" class="visually-hidden" type="text" name="email">
-              <p class="input-value">Оформление</p>
+              <input type="text" name="individual-appearance" id="input-appearance" placeholder="Выберите оформление" readonly>
             </fieldset>
             <fieldset>
               <legend>Телефон</legend>
-              <input id="input-phone" type="text" placeholder="+79ххххххххх" pattern="(\+7|8)9[0-9]{9}" name="phone" maxlength="12" required>
+              <input type="text" name="individual-phone" id="individual-phone" placeholder="+79ххххххххх" pattern="(\+7|8)9[0-9]{9}"
+                maxlength="12">
             </fieldset>
-            <button type="submit" class="main-btn individual-form-btn" title="Проверьте ваш заказ">Заказать торт</button>
+              <button type="submit" id="individual-form-submit" class="g-recaptcha main-btn individual-form-btn" title="Проверьте ваш заказ">Заказать торт</button>
           </form>
         </div>
       </div>
@@ -255,7 +256,8 @@
           <div class="reviews-review">
             <h3 id="slider-name" class="reviews-name">Аня</h3>
             <p id="slider-age" class="reviews-age">Раб, 33 года</p>
-            <p id="slider-comment" class="reviews-comment">Огромное спасибо за мой юбилейный сюрприз! Восторг, восхищение, и масса положительных эмоций!</p>
+            <p id="slider-comment" class="reviews-comment">Огромное спасибо за мой юбилейный сюрприз! Восторг,
+              восхищение, и масса положительных эмоций!</p>
             <p id="slider-quantity" class="reviews-quantity">1/26</p>
           </div>
         </div>
@@ -315,12 +317,14 @@
       <div class="contacts-flex">
         <div class="contacts-form">
           <p>Заполните форму ниже и мы свяжемся с Вами</p>
-          <form id="contact-form" action="https://echo.htmlacademy.ru" method="POST">
-            <input type="text" name="name" placeholder="Введите имя" required>
-            <input type="text" placeholder="Введите телефон (+79ххххххххх)" pattern="(\+7|8)9[0-9]{9}" name="phone" maxlength="12" required>
-            <input class="visually-hidden" id="contact-email" type="text" placeholder="Введите email" name="email">
-            <textarea name="question" cols="10" rows="1" placeholder="Ваш вопрос" required></textarea>
-            <button class="main-btn">Отправить</button>
+          <form id="contact-form" action="/contact-form.php" method="POST">
+          <!-- <form id="contact-form" action="https://echo.htmlacademy.ru/" method="POST"> -->
+            <input type="text" id="contact-name" name="contact-name" placeholder="Введите имя">
+            <input type="text" id="contact-phone" placeholder="Введите телефон (+79ххххххххх)" pattern="(\+7|8)9[0-9]{9}" name="contact-phone"
+              maxlength="12">
+            <textarea name="contact-question" id="contact-question" cols="10" rows="1" placeholder="Ваш вопрос"></textarea>
+            <div id="contact-form-recaptcha"></div>
+            <button type="submit" id="contact-form-submit" class="main-btn">Отправить</button>
           </form>
         </div>
         <div class="contacts-info">
