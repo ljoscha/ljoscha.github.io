@@ -3250,3 +3250,18 @@ section.features
 {
     background-image: url(../img/btn-inst.svg);
 }
+
+.thanks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 74.4px - 50px);
+}
+
+.thanks p{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin: 10px 0;
+    text-align: center;
+}
