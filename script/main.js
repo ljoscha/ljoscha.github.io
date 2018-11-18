@@ -355,7 +355,7 @@ individualFormSubmit.addEventListener("click", function (evt) {
   if (!inputIndividualPhone.value || inputIndividualPhone.value.length != 12) {
     evt.preventDefault();
     inputIndividualPhone.classList.add("error");
-    inputIndividualPhone.addEventListener("keypress", errorReset);
+    inputIndividualPhone.addEventListener("keyup", errorReset);
   }
   if (inputFilling.value && inputSize.value && inputAppearance.value && inputIndividualPhone.value) {
     evt.preventDefault();
@@ -375,7 +375,7 @@ contactPhone.addEventListener("focus", addCountryCode);
 
 function errorReset() {
   this.classList.remove("error");
-  this.removeEventListener("keypress", errorReset);
+  this.removeEventListener("keyup", errorReset);
 }
 
 function addCountryCode() {
@@ -394,17 +394,17 @@ contactFormSubmit.addEventListener("click", function (evt) {
   if (!contactName.value) {
     evt.preventDefault();
     contactName.classList.add("error");
-    contactName.addEventListener("keypress", errorReset);
+    contactName.addEventListener("keyup", errorReset);
   }
   if (!contactPhone.value || contactPhone.value.length != 12) {
     evt.preventDefault();
     contactPhone.classList.add("error");
-    contactPhone.addEventListener("keypress", errorReset);
+    contactPhone.addEventListener("keyup", errorReset);
   }
   if (!contactQuestion.value) {
     evt.preventDefault();
     contactQuestion.classList.add("error");
-    contactQuestion.addEventListener("keypress", errorReset);
+    contactQuestion.addEventListener("keyup", errorReset);
   }
   if (contactName.value && contactPhone.value && contactQuestion.value) {
     evt.preventDefault();
