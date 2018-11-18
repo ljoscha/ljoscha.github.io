@@ -313,14 +313,12 @@ let individualForm = document.getElementById("individual-form");
 let individualFormSubmit = document.getElementById("individual-form-submit");
 let inputIndividualPhone = document.getElementById("individual-phone");
 
-
-// function onSubmitReCaptcha(token) {
-//   individualForm.submit();
-// }
+inputIndividualPhone.addEventListener("keydown", letterPrevent);
+inputIndividualPhone.addEventListener("focus", addCountryCode);
 
 
 var idCaptcha1, idCaptcha2;
-var onloadReCaptchaInvisible = function() {
+var onloadReCaptchaInvisible = function () {
   idCaptcha1 = grecaptcha.render('individual-form-recaptcha', {
     "sitekey": "6LdH7HkUAAAAAEOUeEkZlDPAikplCLIfEaFX1S_b",
     "callback": "onSubmitIndividualForm",
@@ -354,12 +352,12 @@ individualFormSubmit.addEventListener("click", function (evt) {
     evt.preventDefault();
     inputAppearance.classList.add("error");
   }
-  if(!inputIndividualPhone.value){
+  if (!inputIndividualPhone.value || inputIndividualPhone.value.length != 12) {
     evt.preventDefault();
     inputIndividualPhone.classList.add("error");
-    inputIndividualPhone.addEventListener("keyup", errorReset);  
+    inputIndividualPhone.addEventListener("keypress", errorReset);
   }
-  if(inputFilling.value && inputSize.value && inputAppearance.value && inputIndividualPhone.value) {
+  if (inputFilling.value && inputSize.value && inputAppearance.value && inputIndividualPhone.value) {
     evt.preventDefault();
     grecaptcha.execute(idCaptcha1);
   }
@@ -372,29 +370,44 @@ let contactName = document.getElementById("contact-name");
 let contactPhone = document.getElementById("contact-phone");
 let contactQuestion = document.getElementById("contact-question");
 
+contactPhone.addEventListener("keydown", letterPrevent);
+contactPhone.addEventListener("focus", addCountryCode);
+
+function errorReset() {
+  this.classList.remove("error");
+  this.removeEventListener("keypress", errorReset);
+}
+
+function addCountryCode() {
+  this.value = "+79";
+  this.removeEventListener("focus", addCountryCode);
+}
+
+function letterPrevent(event) {
+  let code = event.keyCode;
+  if ((!((code >= 48 && code <= 57) || (code >= 96 && code <= 105) || code == 107 || code == 8 || code == 9))) {
+        event.preventDefault();
+      }
+}
+
 contactFormSubmit.addEventListener("click", function (evt) {
-  if(!contactName.value){
+  if (!contactName.value) {
     evt.preventDefault();
     contactName.classList.add("error");
-    contactName.addEventListener("keyup", errorReset);
+    contactName.addEventListener("keypress", errorReset);
   }
-  if(!contactPhone.value){
+  if (!contactPhone.value || contactPhone.value.length != 12) {
     evt.preventDefault();
     contactPhone.classList.add("error");
-    contactPhone.addEventListener("keyup", errorReset);    
+    contactPhone.addEventListener("keypress", errorReset);
   }
-  if(!contactQuestion.value){
+  if (!contactQuestion.value) {
     evt.preventDefault();
     contactQuestion.classList.add("error");
-    contactQuestion.addEventListener("keyup", errorReset);    
+    contactQuestion.addEventListener("keypress", errorReset);
   }
-  if(contactName.value && contactPhone.value && contactQuestion.value){
+  if (contactName.value && contactPhone.value && contactQuestion.value) {
     evt.preventDefault();
     grecaptcha.execute(idCaptcha2);
   }
 })
-
-function errorReset(){
-  this.classList.remove("error");
-  this.removeEventListener.remove(("keyup", errorReset));
-}
